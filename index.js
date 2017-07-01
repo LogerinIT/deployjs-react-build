@@ -14,12 +14,13 @@ module.exports = {
     var DeployPlugin = DeployPluginBase.extend({
       name: options.name,
       defaultConfig: {
-        deployUrl: ''
+        deployUrl: '',
+        outputPath: 'build'
       },
 
       build: function(/* context */) {
         var self       = this;
-        var outputPath = 'build';
+        var outputPath = this.readConfig('outputPath');
         var deployUrl  = this.readConfig('deployUrl');
 
         if(deployUrl) {
