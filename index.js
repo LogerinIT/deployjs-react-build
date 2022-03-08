@@ -22,6 +22,7 @@ module.exports = {
       build: function (/* context */) {
         var outputPath = this.readConfig('outputPath');
         var deployUrl = this.readConfig('deployUrl');
+        var buildCommand = this.readConfig('buildCommand');
 
         if (deployUrl) {
           process.env['PUBLIC_URL'] = deployUrl;
